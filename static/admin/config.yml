@@ -7,7 +7,7 @@ public_folder: "/uploads"
 
 locale: 'en'
 
-site_url: https://your-church-site.netlify.app
+site_url: https://church-website-template.netlify.app/
 
 collections:
   # Homepage content
