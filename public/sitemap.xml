@@ -2,57 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/events/community-picnic/</loc>
+    <loc>https://example.org/events/</loc>
+    <lastmod>2025-03-26T17:43:54-04:00</lastmod>
+  </url><url>
+    <loc>https://example.org/</loc>
+    <lastmod>2025-03-26T17:43:54-04:00</lastmod>
+  </url><url>
+    <loc>https://example.org/sermons/</loc>
+    <lastmod>2025-03-26T17:43:47-04:00</lastmod>
+  </url><url>
+    <loc>https://example.org/events/community-picnic/</loc>
     <lastmod>2024-04-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/events/</loc>
-    <lastmod>2024-04-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2024-04-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/sermons/2024-03-24-jesus-heals/</loc>
+    <loc>https://example.org/sermons/2024-03-24-jesus-heals/</loc>
     <lastmod>2024-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sermons/</loc>
-    <lastmod>2024-03-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/blue/</loc>
+    <loc>https://example.org/tags/blue/</loc>
     <lastmod>2023-03-15T11:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/green/</loc>
+    <loc>https://example.org/tags/green/</loc>
     <lastmod>2023-03-15T11:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/post-3/</loc>
+    <loc>https://example.org/posts/post-3/</loc>
     <lastmod>2023-03-15T11:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/red/</loc>
+    <loc>https://example.org/tags/red/</loc>
     <lastmod>2023-03-15T11:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://example.org/tags/</loc>
     <lastmod>2023-03-15T11:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/post-2/</loc>
+    <loc>https://example.org/posts/post-2/</loc>
     <lastmod>2023-02-15T10:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/post-1/</loc>
+    <loc>https://example.org/posts/post-1/</loc>
     <lastmod>2023-01-15T09:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://example.org/posts/</loc>
     <lastmod>2023-01-01T08:30:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://example.org/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://example.org/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/pages/contact/</loc>
+    <loc>https://example.org/pages/contact/</loc>
   </url><url>
-    <loc>http://localhost:1313/staff/jane-smith/</loc>
+    <loc>https://example.org/staff/jane-smith/</loc>
   </url><url>
-    <loc>http://localhost:1313/staff/john-doe/</loc>
+    <loc>https://example.org/staff/john-doe/</loc>
   </url><url>
-    <loc>http://localhost:1313/pages/</loc>
+    <loc>https://example.org/pages/</loc>
   </url><url>
-    <loc>http://localhost:1313/staff/</loc>
+    <loc>https://example.org/staff/</loc>
   </url>
 </urlset>
