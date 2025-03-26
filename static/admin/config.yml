@@ -1,0 +1,104 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+locale: 'en'
+
+site_url: https://your-church-site.netlify.app
+
+collections:
+  # Homepage content
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - file: "content/_index.md"
+        label: "Homepage Content"
+        name: "home"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Subtext", name: "hero_subtext", widget: "text" }
+          - { label: "Hero Background Image", name: "hero_image", widget: "image", required: false }
+          - { label: "Welcome Message", name: "welcome_message", widget: "markdown" }
+          - { label: "Service Times", name: "service_times", widget: "text" }
+          - label: "CTA Buttons"
+            name: "cta_buttons"
+            widget: "list"
+            fields:
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "Link", name: "link", widget: "string" }
+
+  # About page
+  - name: "about"
+    label: "About Page"
+    files:
+      - file: "content/about/_index.md"
+        label: "About"
+        name: "about"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Mission Statement", name: "mission", widget: "markdown" }
+          - { label: "Beliefs", name: "beliefs", widget: "markdown" }
+          - label: "Leadership Team"
+            name: "leadership"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "markdown" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+          - { label: "Call to Action Text", name: "cta_text", widget: "string", required: false }
+          - { label: "Call to Action Link", name: "cta_link", widget: "string", required: false }
+
+  # Sermons collection
+  - name: "sermons"
+    label: "Sermons"
+    folder: "content/sermons"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Speaker", name: "speaker", widget: "string" }
+      - { label: "Audio URL", name: "audio", widget: "string", required: false }
+      - { label: "Video URL", name: "video", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Events collection
+  - name: "events"
+    label: "Events"
+    folder: "content/events"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Time", name: "time", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Description", name: "body", widget: "markdown" }
+
+  # Staff bios
+  - name: "staff"
+    label: "Staff Bios"
+    folder: "content/staff"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Bio", name: "body", widget: "markdown" }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+
+  # Optional: Custom pages (e.g., Contact)
+  - name: "pages"
+    label: "Custom Pages"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

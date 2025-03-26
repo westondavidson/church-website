@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="hero">
+  <h1>{{ .Params.hero_heading }}</h1>
+  <p>{{ .Params.hero_subtext }}</p>
+  {{ with .Params.hero_image }}
+    <img src="{{ . }}" alt="Hero Image">
+  {{ end }}
+</section>
+
+<section class="welcome">
+  <h2>Welcome</h2>
+  {{ .Params.welcome_message | markdownify }}
+</section>
+
+<section class="service-times">
+  <h3>Service Times</h3>
+  <p>{{ .Params.service_times }}</p>
+</section>
+
+<section class="cta-buttons">
+  {{ range .Params.cta_buttons }}
+    <a href="{{ .link }}" class="button">{{ .text }}</a>
+  {{ end }}
+</section>
+{{ end }}

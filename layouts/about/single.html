@@ -1,0 +1,36 @@
+{{ define "main" }}
+<section class="about-intro">
+  <h1>{{ .Title }}</h1>
+  <p>{{ .Params.intro }}</p>
+</section>
+
+<section class="mission">
+  <h2>Our Mission</h2>
+  {{ .Params.mission | markdownify }}
+</section>
+
+<section class="beliefs">
+  <h2>What We Believe</h2>
+  {{ .Params.beliefs | markdownify }}
+</section>
+
+<section class="leadership">
+  <h2>Leadership Team</h2>
+  <div class="team-grid">
+    {{ range .Params.leadership }}
+      <div class="leader">
+        <img src="{{ .photo }}" alt="{{ .name }}">
+        <h3>{{ .name }}</h3>
+        <p><em>{{ .role }}</em></p>
+        {{ .bio | markdownify }}
+      </div>
+    {{ end }}
+  </div>
+</section>
+
+{{ if .Params.cta_text }}
+<section class="cta">
+  <a href="{{ .Params.cta_link }}" class="button">{{ .Params.cta_text }}</a>
+</section>
+{{ end }}
+{{ end }}
