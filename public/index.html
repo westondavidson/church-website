@@ -11,6 +11,8 @@
 
       <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
 
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 
 </head>
 <body>
@@ -60,5 +62,17 @@ Our mission is to glorify God by making disciples of Jesus.
     <p>&copy; 2025 Your Church Name. All rights reserved.</p>
   </footer>
   </footer>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
