@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <h1>Events</h1>
+  {{ range .Pages }}
+    <article class="event">
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      {{ with .Params.date }}
+        <p><strong>Date:</strong> {{ . | dateFormat "Jan 2, 2006" }}</p>
+      {{ end }}
+      <p>{{ .Summary }}</p>
+    </article>
+  {{ else }}
+    <p>No events scheduled at this time. Check back later!</p>
+  {{ end }}
+{{ end }}
