@@ -93,7 +93,7 @@ collections:
     label: "Contact Page"
     files:
       - file: "content/contact.md"
-        label: "Contact"
+        label: "Contact page content"
         name: "contact"
         fields:
           - { label: "Title", name: "title", widget: "string" }
