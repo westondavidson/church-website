@@ -1,22 +1,288 @@
+/* 
+  main.css 
+  Description: Styles for a church website with a hero section, 
+  info cards, and a mobile-friendly layout.
+*/
+
+/* RESET & BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 1. Let the entire page fill the viewport to allow a sticky footer */
+
+html, body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 body {
-  color: #222;
-  font-family: sans-serif;
-  line-height: 1.5;
-  margin: 1rem;
-  max-width: 768px;
+  display: flex;
+  flex-direction: column;
 }
 
-header {
-  border-bottom: 1px solid #222;
-  margin-bottom: 1rem;
+/* 2. main grows to fill leftover space, pushing footer down */
+main {
+  flex: 1;
 }
 
-footer {
-  border-top: 1px solid #222;
-  margin-top: 1rem;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
-  color: #00e;
+  color: #0066cc;
   text-decoration: none;
 }
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 
+  1. HEADER & NAVIGATION 
+  ------------------------------------------------------------
+*/
+
+/* Header container */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* ensure it sits above the hero background */
+  background: transparent; /* see-through so hero is visible behind nav */
+  padding: 1rem;
+}
+
+
+/* Optional: A "logo" class or link on the left */
+header .logo {
+  float: left;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff; /* white if hero is dark behind it; adjust as needed */
+  text-decoration: none;
+}
+
+/* Navigation container */
+/* 5. Navigation floats right */
+nav {
+  float: right;
+}
+
+/* Make each nav link a button-like element */
+nav a {
+  background-color: #003366; /* button color */
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-left: 0.5rem; /* spacing between buttons */
+}
+
+nav a:hover {
+  background-color: #004da8;
+}
+
+
+@media screen and (max-width: 768px) {
+  /* Stack the nav items on mobile */
+  nav {
+    float: none;
+    margin-top: 0.5rem;
+  }
+
+  nav a {
+    margin: 0 0.75rem 0.75rem 0;
+  }
+}
+
+/* 
+  2. HERO SECTION 
+  ------------------------------------------------------------
+  - Typically you'd place a background image here if desired. 
+  - For example:
+*/
+
+
+
+/* 6. Hero background + top padding so text isn't hidden under header */
+.hero {
+  margin-top: 0; 
+  padding: 6rem 1rem 4rem; /* top padding accounts for the header's overlap */
+  text-align: center;
+  position: relative;
+  background: url('/uploads/default-hero-image.jpg') center/cover no-repeat;
+  /* Optionally add a gradient overlay for better text contrast:
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.4), 
+    rgba(0, 0, 0, 0.4)
+  ), url('/uploads/default-hero-image.jpg') center/cover no-repeat;
+  color: #fff;
+  */
+}
+
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff; /* If the hero is dark behind it, or #333 if it's light */
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #fff; /* adjust to match your background */
+}
+
+.hero .service-time {
+  font-size: 1rem;
+  color: #777;
+}
+
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+/* 
+  3. INFO CARDS SECTION 
+  ------------------------------------------------------------
+  - A grid of cards for "New Here", "Kids", "Life Groups", etc.
+*/
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.card p {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.card a {
+  display: inline-block;
+  background-color: #0066cc;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.card a:hover {
+  background-color: #004da8;
+}
+
+@media screen and (max-width: 992px) {
+  .info-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 
+  4. LOCATION & TIME SECTION 
+  ------------------------------------------------------------
+*/
+
+.location-time {
+  background-color: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.location-time h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.location-time .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.location-time .grid .info-box {
+  background-color: #f8f8f8;
+  border-radius: 6px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.location-time .grid .info-box h3 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .location-time .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 
+  5. FOOTER 
+  ------------------------------------------------------------
+*/
+
+footer {
+  background-color: #003366;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* 
+  6. ADDITIONAL RESPONSIVENESS 
+  ------------------------------------------------------------
+  Make sure to have:
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  in your <head> for mobile scaling.
+  
+  For more advanced responsive nav (hamburger menu), 
+  you'll need some JavaScript or a pure CSS toggle approach.
+*/

@@ -1,4 +1,4 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Church Template'
-theme = 'church-template-1'
+# theme = 'church-template-1'
