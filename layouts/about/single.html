@@ -1,4 +1,5 @@
 {{ define "main" }}
+<p>Debug output: {{ .Params | jsonify }}</p>
 <section class="about-intro">
   <h1>{{ .Title }}</h1>
   <p>{{ .Params.intro }}</p>

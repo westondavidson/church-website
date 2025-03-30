@@ -1,16 +1,15 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: main # Branch to update (optional; defaults to master)
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
 
 locale: 'en'
 
-site_url: https://your-church-site.netlify.app
+site_url: https://church-website-template.netlify.app/
 
 collections:
-  # Homepage content
   - name: "homepage"
     label: "Homepage"
     files:
@@ -31,11 +30,10 @@ collections:
               - { label: "Text", name: "text", widget: "string" }
               - { label: "Link", name: "link", widget: "string" }
 
-  # About page
   - name: "about"
     label: "About Page"
     files:
-      - file: "content/about/_index.md"
+      - file: "content/about.md"
         label: "About"
         name: "about"
         fields:
@@ -54,7 +52,6 @@ collections:
           - { label: "Call to Action Text", name: "cta_text", widget: "string", required: false }
           - { label: "Call to Action Link", name: "cta_link", widget: "string", required: false }
 
-  # Sermons collection
   - name: "sermons"
     label: "Sermons"
     folder: "content/sermons"
@@ -68,7 +65,6 @@ collections:
       - { label: "Video URL", name: "video", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # Events collection
   - name: "events"
     label: "Events"
     folder: "content/events"
@@ -81,7 +77,6 @@ collections:
       - { label: "Location", name: "location", widget: "string" }
       - { label: "Description", name: "body", widget: "markdown" }
 
-  # Staff bios
   - name: "staff"
     label: "Staff Bios"
     folder: "content/staff"
@@ -93,7 +88,6 @@ collections:
       - { label: "Bio", name: "body", widget: "markdown" }
       - { label: "Photo", name: "photo", widget: "image", required: false }
 
-  # Optional: Custom pages (e.g., Contact)
   - name: "pages"
     label: "Custom Pages"
     folder: "content/pages"

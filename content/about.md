@@ -1,5 +1,6 @@
 ---
-title: "About Our Church"
+title: "About Our Church test"
+layout: "about"
 intro: "We exist to glorify God and make disciples of Jesus Christ."
 mission: |
   At Grace Church, our mission is to proclaim the Gospel, 
