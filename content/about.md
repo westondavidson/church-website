@@ -1,5 +1,6 @@
 ---
 Title: "About Our Church"
+hero_subtext: "Learn about us"
 layout: "about"
 type: "about"
 intro: "We exist to glorify God and make disciples of Jesus Christ."
@@ -25,4 +26,5 @@ leadership:
     photo: "/uploads/jane.jpg"
 cta_text: "Learn More About Our Beliefs"
 cta_link: "/pages/beliefs"
+
 ---

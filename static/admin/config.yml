@@ -39,6 +39,7 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Hero Subtext", name: "hero_subtext", widget: "text" }
           - { label: "Mission Statement", name: "mission", widget: "markdown" }
           - { label: "Beliefs", name: "beliefs", widget: "markdown" }
           - label: "Leadership Team"

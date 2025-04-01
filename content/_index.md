@@ -1,7 +1,7 @@
 ---
 title: Welcome to Grace Church
 hero_heading: A Place to Grow in Christ
-hero_subtext: Join us in worship, community, and service - testing testing.
+hero_subtext: Join us in worship, community, and service.
 hero_image: ""
 welcome_message: |-
   We are a Christ-centered community located in Port Orange, FL. 
@@ -12,4 +12,6 @@ cta_buttons:
     link: /contact
   - text: Watch Sermons
     link: /sermons
+  - text: Learn About Us
+    link: /about
 ---
