@@ -1,18 +1,20 @@
 {{ define "main" }}
-
-<section class="welcome">
-  <h2>Welcome</h2>
-  {{ .Params.welcome_message | markdownify }}
-</section>
-
-<section class="service-times">
-  <h3>Service Times</h3>
-  <p>{{ .Params.service_times }}</p>
-</section>
-
-<section class="cta-buttons">
-  {{ range .Params.cta_buttons }}
-    <a href="{{ .link }}" class="button">{{ .text }}</a>
-  {{ end }}
-</section>
+<div class="home-info-row">
+  <section class="welcome">
+    {{ .Params.welcome_message | markdownify }}
+  </section>
+  <section class="service-times">
+    <h3>Service Times</h3>
+    <p>{{ .Params.service_times }}</p>
+  </section>
+  <section class="service-times">
+    <h3>Location</h3>
+    <p>{{ .Params.location }}</p>
+  </section>
+  <section class="cta-buttons">
+    {{ range .Params.cta_buttons }}
+      <a href="{{ .link }}" class="button">{{ .text }}</a>
+    {{ end }}
+  </section>
+</div>
 {{ end }}
