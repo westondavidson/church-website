@@ -2,69 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ .Title }}</title>
-  <link rel="stylesheet" href="/css/main.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+  
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  
+  <!-- Prefetch DNS for external resources -->
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  
+  <!-- Preload critical assets -->
+  <link rel="preload" href="/css/main.css" as="style">
+  <link rel="preload" href="/js/mobile-menu.js" as="script">
 </head>
-<body>
+<body class="{{ with .Section }}section-{{ . }}{{ else }}section-home{{ end }}">
+  
   {{ partial "header.html" . }}
 
   <!-- Hero Section: This will appear on all pages -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>{{ .Title }}</h1>
-      {{ with .Params.hero_subtext }}
-        <p>{{ . }}</p>
-      {{ else }}
-      {{ end }}
+    <div class="container">
+      <div class="hero-content">
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.hero_subtext }}
+          <p>{{ . }}</p>
+        {{ end }}
+        {{ with .Params.hero_cta }}
+          <div class="hero-cta">
+            <a href="{{ .url }}" class="btn btn-primary">{{ .text }}</a>
+          </div>
+        {{ end }}
+      </div>
     </div>
   </section>
   
-  <main>
-    {{ block "main" . }}{{ end }}
+  <main id="main-content">
+    <div class="container">
+      {{ block "main" . }}{{ end }}
+    </div>
   </main>
+  
   {{ partial "footer.html" . }}
+  
+  <!-- Scripts -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="/js/mobile-menu.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var swiper = new Swiper('.swiper-container', {
-        loop: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        // Add responsive breakpoints
-        breakpoints: {
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 10
+      var swiperElements = document.querySelectorAll('.swiper-container');
+      
+      if (swiperElements.length > 0) {
+        var swiper = new Swiper('.swiper-container', {
+          loop: true,
+          autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
           },
-          768: {
-            slidesPerView: 1,
-            spaceBetween: 20
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
           },
-          1024: {
-            slidesPerView: 1,
-            spaceBetween: 30
-          }
-        },
-        // Ensure proper sizing
-        observer: true,
-        observeParents: true,
-        resizeObserver: true,
-        updateOnWindowResize: true
-      });
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          // Add responsive breakpoints
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10
+            },
+            768: {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            1024: {
+              slidesPerView: 1,
+              spaceBetween: 30
+            }
+          },
+          // Ensure proper sizing
+          observer: true,
+          observeParents: true,
+          resizeObserver: true,
+          updateOnWindowResize: true
+        });
+      }
     });
   </script>
 </body>

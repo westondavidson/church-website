@@ -2,67 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Welcome to Comunidad de Fe (Community of Faith) on Church Template</title>
-    <link>http://localhost:54530/</link>
+    <link>http://localhost:60823/</link>
     <description>Recent content in Welcome to Comunidad de Fe (Community of Faith) on Church Template</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Mar 2025 21:49:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54530/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:60823/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>trying one more</title>
-      <link>http://localhost:54530/events/trying-one-more/</link>
+      <link>http://localhost:60823/events/trying-one-more/</link>
       <pubDate>Wed, 26 Mar 2025 21:49:00 +0000</pubDate>
-      <guid>http://localhost:54530/events/trying-one-more/</guid>
+      <guid>http://localhost:60823/events/trying-one-more/</guid>
       <description>&lt;p&gt;nice&lt;/p&gt;</description>
     </item>
     <item>
       <title>Testing</title>
-      <link>http://localhost:54530/events/testing/</link>
+      <link>http://localhost:60823/events/testing/</link>
       <pubDate>Wed, 26 Mar 2025 21:45:00 +0000</pubDate>
-      <guid>http://localhost:54530/events/testing/</guid>
+      <guid>http://localhost:60823/events/testing/</guid>
       <description>&lt;p&gt;bery cool&lt;/p&gt;</description>
     </item>
     <item>
-      <title>First Sermon</title>
-      <link>http://localhost:54530/sermons/first-sermon/</link>
-      <pubDate>Wed, 26 Mar 2025 17:43:47 -0400</pubDate>
-      <guid>http://localhost:54530/sermons/first-sermon/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Jesus Heals the Broken</title>
-      <link>http://localhost:54530/sermons/2024-03-24-jesus-heals/</link>
+      <link>http://localhost:60823/sermons/2024-03-24-jesus-heals/</link>
       <pubDate>Sun, 24 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54530/sermons/2024-03-24-jesus-heals/</guid>
+      <guid>http://localhost:60823/sermons/2024-03-24-jesus-heals/</guid>
       <description>&lt;p&gt;In Mark 2, we see Jesus healing the paralyzed man lowered through the roof.&#xA;This miracle not only shows His power over the body but His authority to forgive sin.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About Our Church</title>
-      <link>http://localhost:54530/about/</link>
+      <link>http://localhost:60823/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54530/about/</guid>
+      <guid>http://localhost:60823/about/</guid>
       <description></description>
     </item>
     <item>
       <title>Contact Us</title>
-      <link>http://localhost:54530/contact/</link>
+      <link>http://localhost:60823/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54530/contact/</guid>
+      <guid>http://localhost:60823/contact/</guid>
       <description></description>
     </item>
     <item>
       <title>Jane Smith</title>
-      <link>http://localhost:54530/staff/jane-smith/</link>
+      <link>http://localhost:60823/staff/jane-smith/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54530/staff/jane-smith/</guid>
+      <guid>http://localhost:60823/staff/jane-smith/</guid>
       <description>&lt;p&gt;Jane&amp;rsquo;s heart is to lead people into joyful and reverent worship of our great God.&lt;/p&gt;</description>
     </item>
     <item>
       <title>John Doe</title>
-      <link>http://localhost:54530/staff/john-doe/</link>
+      <link>http://localhost:60823/staff/john-doe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54530/staff/john-doe/</guid>
+      <guid>http://localhost:60823/staff/john-doe/</guid>
       <description>&lt;p&gt;John loves preaching the Word, building up the body, and equipping leaders in the local church.&lt;/p&gt;</description>
     </item>
-  </channel>
-</rss>
+  </

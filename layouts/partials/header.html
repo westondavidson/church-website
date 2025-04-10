@@ -1,12 +1,33 @@
-<header>
-    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
-      <span class="hamburger"></span>
-    </button>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/sermons">Sermons</a>
-      <a href="/events">Events</a>
-      <a href="/contact">Contact</a>
-    </nav>
-  </header>
+<header id="main-header" class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <a href="/" class="logo" aria-label="Church Name Homepage">
+        <span>Church Name</span>
+      </a>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false" aria-controls="main-navigation">
+        <span class="hamburger"></span>
+      </button>
+      
+      <nav id="main-navigation" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="/" class="nav-link {{ if eq .RelPermalink "/" }}active{{ end }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="/about" class="nav-link {{ if hasPrefix .RelPermalink "/about" }}active{{ end }}">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="/sermons" class="nav-link {{ if hasPrefix .RelPermalink "/sermons" }}active{{ end }}">Sermons</a>
+          </li>
+          <li class="nav-item">
+            <a href="/events" class="nav-link {{ if hasPrefix .RelPermalink "/events" }}active{{ end }}">Events</a>
+          </li>
+          <li class="nav-item">
+            <a href="/contact" class="nav-link {{ if hasPrefix .RelPermalink "/contact" }}active{{ end }}">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

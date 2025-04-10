@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('header nav');
+    const hamburger = document.querySelector('.hamburger');
     
     if (menuToggle && navMenu) {
         // Add initial state for mobile
@@ -13,6 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.toggle('active');
             menuToggle.classList.toggle('active');
             
+            // Update aria-expanded attribute for accessibility
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            
             // Toggle display directly for immediate feedback
             if (navMenu.classList.contains('active')) {
                 navMenu.style.display = 'flex';
@@ -21,12 +26,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Close menu when clicking outside
+        // Close menu when clicking outside - ONLY ON MOBILE
         document.addEventListener('click', function(event) {
-            if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-                navMenu.classList.remove('active');
-                menuToggle.classList.remove('active');
-                navMenu.style.display = 'none';
+            // Only apply this behavior on mobile screens
+            if (window.innerWidth <= 768) {
+                if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                    navMenu.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    navMenu.style.display = 'none';
+                }
             }
         });
 
@@ -35,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (window.innerWidth > 768) {
                 navMenu.classList.remove('active');
                 menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
                 navMenu.style.display = 'flex';
             } else {
                 if (!navMenu.classList.contains('active')) {
