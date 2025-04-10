@@ -33,6 +33,9 @@
   <!-- Preload critical assets -->
   <link rel="preload" href="/css/main.css" as="style">
   <link rel="preload" href="/js/mobile-menu.js" as="script">
+  
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="{{ with .Section }}section-{{ . }}{{ else }}section-home{{ end }}">
   
@@ -115,6 +118,30 @@
         });
       }
     });
+  </script>
+  
+  <!-- Netlify Identity Redirect -->
+  <script>
+    if (window.netlifyIdentity) {
+      // Check for recovery token or invite token
+      const hash = window.location.hash;
+      const token = hash.match(/#invite_token=([^&]+)/) || hash.match(/#recovery_token=([^&]+)/);
+      
+      if (token && token.length > 1 && token[1]) {
+        // If this is an invite or recovery, redirect to the admin page
+        window.localStorage.setItem('netlifySiteURL', window.location.href.split('#')[0]);
+        window.location.replace('/admin/#' + hash.slice(1));
+      }
+      
+      // Handle login status changes
+      window.netlifyIdentity.on('init', user => {
+        if (!user) {
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
   </script>
 </body>
 </html>
