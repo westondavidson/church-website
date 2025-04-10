@@ -32,3 +32,9 @@
     <loc>http://localhost:54530/staff/jane-smith/</loc>
   </url><url>
     <loc>http://localhost:54530/staff/john-doe/</loc>
+  </url><url>
+    <loc>http://localhost:54530/staff/</loc>
+  </url><url>
+    <loc>http://localhost:54530/tags/</loc>
+  </url>
+</urlset>
