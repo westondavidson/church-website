@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Contact Us | Church Template</title>
+  <title>Contact Us | Church Website</title>
   
-  <meta name="description" content="">
+  <meta name="description" content="A welcoming Christian church community">
   
   
   <link rel="icon" href="/favicon.ico">
@@ -22,8 +22,8 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   
   
-  <meta property="og:title" content="Contact Us | Church Template">
-  <meta property="og:description" content="">
+  <meta property="og:title" content="Contact Us | Church Website">
+  <meta property="og:description" content="A welcoming Christian church community">
   <meta property="og:type" content="article">
   <meta property="og:url" content="http://localhost:60823/contact/">
   
@@ -157,10 +157,11 @@ Port Orange, FL 32129
       var swiperElements = document.querySelectorAll('.swiper-container');
       
       if (swiperElements.length > 0) {
+        
         var swiper = new Swiper('.swiper-container', {
           loop: true,
           autoplay: {
-            delay: 4000,
+            delay: 5000,
             disableOnInteraction: false,
           },
           pagination: {
@@ -187,10 +188,16 @@ Port Orange, FL 32129
             }
           },
           
+          preventInteractionOnTransition: true,
+          autoHeight: false,
+          speed: 600, 
+          
+          hardware: true,
+          
           observer: true,
           observeParents: true,
-          resizeObserver: true,
-          updateOnWindowResize: true
+          observeSlideChildren: false,
+          resizeObserver: false
         });
       }
     });

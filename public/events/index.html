@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Events | Church Template</title>
+  <title>Events | Church Website</title>
   
   <meta name="description" content="Upcoming events at our church.">
   
@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   
   
-  <meta property="og:title" content="Events | Church Template">
+  <meta property="og:title" content="Events | Church Website">
   <meta property="og:description" content="Upcoming events at our church.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="http://localhost:60823/events/">
@@ -153,10 +153,11 @@
       var swiperElements = document.querySelectorAll('.swiper-container');
       
       if (swiperElements.length > 0) {
+        
         var swiper = new Swiper('.swiper-container', {
           loop: true,
           autoplay: {
-            delay: 4000,
+            delay: 5000,
             disableOnInteraction: false,
           },
           pagination: {
@@ -183,10 +184,16 @@
             }
           },
           
+          preventInteractionOnTransition: true,
+          autoHeight: false,
+          speed: 600, 
+          
+          hardware: true,
+          
           observer: true,
           observeParents: true,
-          resizeObserver: true,
-          updateOnWindowResize: true
+          observeSlideChildren: false,
+          resizeObserver: false
         });
       }
     });

@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Church Template</title>
+  <title>Church Website</title>
   
-  <meta name="description" content="">
+  <meta name="description" content="A welcoming Christian church community">
   
   
   <link rel="icon" href="/favicon.ico">
@@ -23,8 +23,8 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   
   
-  <meta property="og:title" content="Church Template">
-  <meta property="og:description" content="">
+  <meta property="og:title" content="Church Website">
+  <meta property="og:description" content="A welcoming Christian church community">
   <meta property="og:type" content="website">
   <meta property="og:url" content="http://localhost:60823/">
   
@@ -140,17 +140,19 @@ Our mission is to glorify God by making disciples of Jesus.</p>
 
 
 <section class="section section-cta">
-  <div class="cta-content">
-    <h2>Join Our Community</h2>
-    <p>We invite you to become part of our church family. Everyone is welcome!</p>
-    <div class="cta-buttons">
-      
-        <a href="/contact" class="btn btn-secondary">Plan Your Visit</a>
-      
-        <a href="/sermons" class="btn btn-secondary">Watch Sermons</a>
-      
-        <a href="/about" class="btn btn-secondary">Learn About Us</a>
-      
+  <div class="container">
+    <div class="cta-content">
+      <h2>Join Our Community</h2>
+      <p>We invite you to become part of our church family. Everyone is welcome!</p>
+      <div class="cta-buttons">
+        
+          <a href="/contact" class="btn btn-secondary">Plan Your Visit</a>
+        
+          <a href="/sermons" class="btn btn-secondary">Watch Sermons</a>
+        
+          <a href="/about" class="btn btn-secondary">Learn About Us</a>
+        
+      </div>
     </div>
   </div>
 </section>
@@ -176,6 +178,10 @@ Our mission is to glorify God by making disciples of Jesus.</p>
     
     <div class="event-card">
       
+      <div class="event-image">
+        <img src="/uploads/default-hero-image.jpg" alt="Welcome to Comunidad de Fe (Community of Faith)" loading="lazy">
+      </div>
+      
       <div class="event-content">
         <span class="event-date">Mar 26, 2025</span>
         <h3>Testing</h3>
@@ -189,36 +195,32 @@ Our mission is to glorify God by making disciples of Jesus.</p>
 
 
 <section class="section section-carousel">
-  <div class="home-carousel">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        
-        <div class="swiper-slide">
-          <a href="/about">
-          <img src="/uploads/default-hero-image.jpg" alt="Church Worship">
-          <div class="slide-caption">Join us for worship every Sunday</div>
-          </a>
+  <div class="container">
+    <div class="home-carousel">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          
+          <div class="swiper-slide">
+            <img src="/uploads/default-hero-image.jpg" alt="Church Worship">
+            <div class="slide-caption">Join us for worship every Sunday</div>
+          </div>
+          
+          <div class="swiper-slide">
+            <img src="/uploads/img_1713.jpeg" alt="Community Gathering">
+            <div class="slide-caption">Our church community coming together</div>
+          </div>
+          
+          <div class="swiper-slide">
+            <img src="/uploads/hero-bg.jpg" alt="Youth Ministry">
+            <div class="slide-caption">Our youth ministry meets every Wednesday</div>
+          </div>
+          
         </div>
         
-        <div class="swiper-slide">
-          <a href="/events">
-          <img src="/uploads/img_1713.jpeg" alt="Community Gathering">
-          <div class="slide-caption">Our church community coming together</div>
-          </a>
-        </div>
-        
-        <div class="swiper-slide">
-          <a href="/events">
-          <img src="/uploads/hero-bg.jpg" alt="Youth Ministry">
-          <div class="slide-caption">Our youth ministry meets every Wednesday</div>
-          </a>
-        </div>
-        
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
-      
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
     </div>
   </div>
 </section>
@@ -239,6 +241,10 @@ Our mission is to glorify God by making disciples of Jesus.</p>
       <p><p>In Mark 2, we see Jesus healing the paralyzed man lowered through the roof.
 This miracle not only shows His power over the body but His authority to forgive sin.</p></p>
       <a href="/sermons/2024-03-24-jesus-heals/" class="btn btn-primary">Watch Now</a>
+    </div>
+    
+    <div class="sermon-thumbnail">
+      <img src="/uploads/default-sermon.jpg" alt="Welcome to Comunidad de Fe (Community of Faith)" loading="lazy">
     </div>
     
   </div>
@@ -296,10 +302,11 @@ This miracle not only shows His power over the body but His authority to forgive
       var swiperElements = document.querySelectorAll('.swiper-container');
       
       if (swiperElements.length > 0) {
+        
         var swiper = new Swiper('.swiper-container', {
           loop: true,
           autoplay: {
-            delay: 4000,
+            delay: 5000,
             disableOnInteraction: false,
           },
           pagination: {
@@ -326,10 +333,16 @@ This miracle not only shows His power over the body but His authority to forgive
             }
           },
           
+          preventInteractionOnTransition: true,
+          autoHeight: false,
+          speed: 600, 
+          
+          hardware: true,
+          
           observer: true,
           observeParents: true,
-          resizeObserver: true,
-          updateOnWindowResize: true
+          observeSlideChildren: false,
+          resizeObserver: false
         });
       }
     });

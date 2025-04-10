@@ -14,11 +14,14 @@
     <loc>http://localhost:60823/events/testing/</loc>
     <lastmod>2025-03-26T21:45:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:60823/sermons/</loc>
-    <lastmod>2025-03-26T17:43:47-04:00</lastmod>
-  </url><url>
     <loc>http://localhost:60823/sermons/2024-03-24-jesus-heals/</loc>
     <lastmod>2024-03-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:60823/sermons/</loc>
+    <lastmod>2024-03-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:60823/sermons/first-sermon/</loc>
+    <lastmod>2023-12-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:60823/about/</loc>
   </url><url>
@@ -33,4 +36,5 @@
     <loc>http://localhost:60823/staff/</loc>
   </url><url>
     <loc>http://localhost:60823/tags/</loc>
-  </ur
+  </url>
+</urlset>

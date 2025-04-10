@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+  <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ site.Data.site_settings.site_title }}</title>
   
-  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ site.Data.site_settings.site_description }}{{ end }}{{ end }}">
   
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico">
@@ -22,8 +22,8 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   
   <!-- Open Graph -->
-  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
-  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ site.Data.site_settings.site_title }}{{ else }}{{ .Title }} | {{ site.Data.site_settings.site_title }}{{ end }}">
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ site.Data.site_settings.site_description }}{{ end }}{{ end }}">
   <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
   <meta property="og:url" content="{{ .Permalink }}">
   
@@ -71,10 +71,11 @@
       var swiperElements = document.querySelectorAll('.swiper-container');
       
       if (swiperElements.length > 0) {
+        // Initialize with better performance options
         var swiper = new Swiper('.swiper-container', {
           loop: true,
           autoplay: {
-            delay: 4000,
+            delay: 5000,
             disableOnInteraction: false,
           },
           pagination: {
@@ -85,7 +86,7 @@
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
           },
-          // Add responsive breakpoints
+          // Responsive settings
           breakpoints: {
             320: {
               slidesPerView: 1,
@@ -100,11 +101,17 @@
               spaceBetween: 30
             }
           },
-          // Ensure proper sizing
+          // Prevent layout shifts
+          preventInteractionOnTransition: true,
+          autoHeight: false,
+          speed: 600, // Slightly slower for smoother transitions
+          // Hardware acceleration
+          hardware: true,
+          // Reduced observer activity to prevent stuttering
           observer: true,
           observeParents: true,
-          resizeObserver: true,
-          updateOnWindowResize: true
+          observeSlideChildren: false,
+          resizeObserver: false
         });
       }
     });

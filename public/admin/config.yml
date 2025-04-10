@@ -10,6 +10,20 @@ locale: 'en'
 site_url: https://church-website-template.netlify.app/
 
 collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "data/site_settings.json"
+        label: "Site Settings"
+        name: "settings"
+        fields:
+          - { label: "Church Name", name: "church_name", widget: "string", hint: "The name displayed in the header and footer" }
+          - { label: "Site Title", name: "site_title", widget: "string", hint: "Used for browser tab titles and SEO" }
+          - { label: "Site Description", name: "site_description", widget: "text", hint: "Used for SEO and social sharing", required: false }
+          - { label: "Contact Email", name: "contact_email", widget: "string", required: false }
+          - { label: "Contact Phone", name: "contact_phone", widget: "string", required: false }
+          - { label: "Address", name: "address", widget: "text", required: false }
+
   - name: "homepage"
     label: "Homepage"
     files:
@@ -23,6 +37,14 @@ collections:
           - { label: "Hero Background Image", name: "hero_image", widget: "image", required: false }
           - { label: "Welcome Message", name: "welcome_message", widget: "markdown" }
           - { label: "Service Times", name: "service_times", widget: "text" }
+          - { label: "Location", name: "location", widget: "text" }
+          - label: "Carousel Images"
+            name: "carousel_images"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text", required: false }
           - label: "CTA Buttons"
             name: "cta_buttons"
             widget: "list"
@@ -62,6 +84,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Speaker", name: "speaker", widget: "string" }
+      - { label: "Image", name: "image", widget: "image", required: false, hint: "Thumbnail image for the sermon" }
       - { label: "Audio URL", name: "audio", widget: "string", required: false }
       - { label: "Video URL", name: "video", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -76,6 +99,7 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Time", name: "time", widget: "string" }
       - { label: "Location", name: "location", widget: "string" }
+      - { label: "Image", name: "image", widget: "image", required: false, hint: "Event card image" }
       - { label: "Description", name: "body", widget: "markdown" }
 
   - name: "staff"

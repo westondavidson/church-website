@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sermons | Church Template</title>
+  <title>Sermons | Church Website</title>
   
-  <meta name="description" content="">
+  <meta name="description" content="Listen to our latest messages and series from our church services">
   
   
   <link rel="icon" href="/favicon.ico">
@@ -22,8 +22,8 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   
   
-  <meta property="og:title" content="Sermons | Church Template">
-  <meta property="og:description" content="">
+  <meta property="og:title" content="Sermons | Church Website">
+  <meta property="og:description" content="Listen to our latest messages and series from our church services">
   <meta property="og:type" content="website">
   <meta property="og:url" content="http://localhost:60823/sermons/">
   
@@ -76,6 +76,8 @@
       <div class="hero-content">
         <h1>Sermons</h1>
         
+          <p>Inspiring messages to deepen your faith and understanding</p>
+        
         
       </div>
     </div>
@@ -84,15 +86,50 @@
   <main id="main-content">
     <div class="container">
       
-<section>
-  <h1>Sermons</h1>
-  <ul>
-    
-      <li>
-        <a href="/sermons/2024-03-24-jesus-heals/">Jesus Heals the Broken</a>
-      </li>
-    
-  </ul>
+<section class="sermons-list">
+  <div class="sermons-header">
+    <h1>Sermons</h1>
+    <p>Listen to our latest messages and series</p>
+  </div>
+
+  
+    <div class="sermon-grid">
+      
+        <div class="sermon-card">
+          
+            <div class="sermon-image">
+              <img src="/uploads/default-sermon.jpg" alt="Jesus Heals the Broken" loading="lazy">
+            </div>
+          
+          
+          <div class="sermon-content">
+            <span class="sermon-date">Mar 24, 2024</span>
+            <h2>Jesus Heals the Broken</h2>
+            <p class="sermon-speaker">Pastor John Doe</p>
+            <p class="sermon-summary"><p>In Mark 2, we see Jesus healing the paralyzed man lowered through the roof.
+This miracle not only shows His power over the body but His authority to forgive sin.</p></p>
+            <a href="/sermons/2024-03-24-jesus-heals/" class="btn btn-primary">Listen Now</a>
+          </div>
+        </div>
+      
+        <div class="sermon-card">
+          
+            <div class="sermon-image sermon-fallback-image">
+              <img src="/uploads/default-sermon.jpg" alt="Walking in Faith" loading="lazy">
+            </div>
+          
+          
+          <div class="sermon-content">
+            <span class="sermon-date">Dec 10, 2023</span>
+            <h2>Walking in Faith</h2>
+            <p class="sermon-speaker">Pastor Jane Smith</p>
+            <p class="sermon-summary"><p>In this sermon, Pastor Jane explores the journey of faith described in Hebrews 11. We learn that faith is the confidence in what we hope for and the assurance about what we do not see. Through examples of Abraham, Moses, and other biblical figures, we discover how to walk by faith in our daily lives.</p></p>
+            <a href="/sermons/first-sermon/" class="btn btn-primary">Listen Now</a>
+          </div>
+        </div>
+      
+    </div>
+  
 </section>
 
     </div>
@@ -145,10 +182,11 @@
       var swiperElements = document.querySelectorAll('.swiper-container');
       
       if (swiperElements.length > 0) {
+        
         var swiper = new Swiper('.swiper-container', {
           loop: true,
           autoplay: {
-            delay: 4000,
+            delay: 5000,
             disableOnInteraction: false,
           },
           pagination: {
@@ -175,10 +213,16 @@
             }
           },
           
+          preventInteractionOnTransition: true,
+          autoHeight: false,
+          speed: 600, 
+          
+          hardware: true,
+          
           observer: true,
           observeParents: true,
-          resizeObserver: true,
-          updateOnWindowResize: true
+          observeSlideChildren: false,
+          resizeObserver: false
         });
       }
     });

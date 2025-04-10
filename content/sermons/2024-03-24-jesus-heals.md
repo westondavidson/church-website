@@ -2,6 +2,7 @@
 title: "Jesus Heals the Broken"
 date: 2024-03-24
 speaker: "Pastor John Doe"
+image: "/uploads/default-sermon.jpg"
 audio: "https://example.com/audio/jesus-heals.mp3"
 video: "https://youtube.com/embed/dQw4w9WgXcQ"
 ---
