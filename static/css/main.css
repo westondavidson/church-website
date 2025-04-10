@@ -513,3 +513,93 @@ footer p {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.home-info-row .cta-buttons a.button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+  .home-info-row {
+    flex-direction: column;
+    margin: 0 1rem;
+  }
+}
+
+
+/* Container for the two-column layout */
+.home-content {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem;
+  flex-wrap: wrap;  /* Allows columns to stack on smaller screens */
+}
+
+/* Left Column: Panels */
+.home-info-panels {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Style for each panel */
+.home-info-panels .panel {
+  background: linear-gradient(135deg, #ffffff, #f2f2f2);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #007BFF; /* Blue border */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect for panels */
+.home-info-panels .panel:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Right Column: Carousel Container */
+.home-carousel {
+  flex: 1;
+  /* Set a minimum height to help layout on larger screens */
+  min-height: 300px;
+  /* Optional: center the carousel content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Basic styling for the carousel images */
+/* (Replace/extend this with your carousel library's CSS if needed) */
+.home-carousel .carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.home-carousel .carousel img {
+  width: 100%;
+  max-width: 300px;  /* Adjust as needed */
+  border-radius: 8px;
+  scroll-snap-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    margin: 1rem;
+  }
+  
+  .home-info-panels {
+    grid-template-columns: 1fr;  /* Stack panels vertically */
+  }
+  
+  .home-carousel .carousel img {
+    max-width: 100%;
+  }
+}
