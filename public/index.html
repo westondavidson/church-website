@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.145.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta name="generator" content="Hugo 0.145.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=53556&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
   <title>Welcome to Comunidad de Fe (Community of Faith)</title>
   <link rel="stylesheet" href="/css/main.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
   <header>
@@ -30,22 +31,25 @@
   
   <main>
     
-<div class="home-info-row">
-  <section class="welcome">
+<div class="home-content">
+<div class="home-info-panels">
+  <section class="panel">
+    <h3>Mission Statement</h3>
     <p>We are a Christ-centered community church located in Davenport, FL.
 Our mission is to glorify God by making disciples of Jesus.</p>
 <p>Service is held in both English and Spanish, all are welcome to join.</p>
 
   </section>
-  <section class="service-times">
+  <section class="panel">
     <h3>Service Times</h3>
     <p>Bible Studies on Sunday 10:00AM | Services on Sunday 11:00AM</p>
   </section>
-  <section class="service-times">
+  <section class="panel">
     <h3>Location</h3>
     <p>Services are held at the Florida Camp Inn Recreation Center, located at 1000 Main St Davenport, FL 33897</p>
   </section>
-  <section class="cta-buttons">
+  <section class="panel">
+    <div class="cta-buttons">
     
       <a href="/contact" class="button">Plan Your Visit</a>
     
@@ -53,12 +57,48 @@ Our mission is to glorify God by making disciples of Jesus.</p>
     
       <a href="/about" class="button">Learn About Us</a>
     
+  </div>
   </section>
+</div>
+
+  
+  <div class="home-carousel">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        
+      </div>
+      
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+
 </div>
 
   </main>
   <footer>
-    <p>&copy; 2025 Your Church Name. All rights reserved.</p>
+    <p>&copy; 2025 Comunidad De Fe Davenport. All rights reserved.</p>
   </footer>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    });
+  </script>
 </body>
 </html>

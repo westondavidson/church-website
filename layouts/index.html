@@ -1,20 +1,43 @@
 {{ define "main" }}
-<div class="home-info-row">
-  <section class="welcome">
+<div class="home-content">
+<div class="home-info-panels">
+  <section class="panel">
+    <h3>Mission Statement</h3>
     {{ .Params.welcome_message | markdownify }}
   </section>
-  <section class="service-times">
+  <section class="panel">
     <h3>Service Times</h3>
     <p>{{ .Params.service_times }}</p>
   </section>
-  <section class="service-times">
+  <section class="panel">
     <h3>Location</h3>
     <p>{{ .Params.location }}</p>
   </section>
-  <section class="cta-buttons">
+  <section class="panel">
+    <div class="cta-buttons">
     {{ range .Params.cta_buttons }}
       <a href="{{ .link }}" class="button">{{ .text }}</a>
     {{ end }}
+  </div>
   </section>
+</div>
+
+  <!-- Right Column: Image Carousel -->
+  <div class="home-carousel">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        {{ range .Params.carousel_images }}
+        <div class="swiper-slide">
+          <img src="{{ . }}" alt="Church Activity">
+        </div>
+        {{ end }}
+      </div>
+      <!-- Optional: Pagination and Navigation Controls -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+
 </div>
 {{ end }}

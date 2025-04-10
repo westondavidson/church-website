@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sermons on Church Template</title>
-    <link>http://localhost:1313/sermons/</link>
+    <link>http://localhost:53556/sermons/</link>
     <description>Recent content in Sermons on Church Template</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/sermons/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:53556/sermons/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Jesus Heals the Broken</title>
-      <link>http://localhost:1313/sermons/2024-03-24-jesus-heals/</link>
+      <link>http://localhost:53556/sermons/2024-03-24-jesus-heals/</link>
       <pubDate>Sun, 24 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sermons/2024-03-24-jesus-heals/</guid>
+      <guid>http://localhost:53556/sermons/2024-03-24-jesus-heals/</guid>
       <description>&lt;p&gt;In Mark 2, we see Jesus healing the paralyzed man lowered through the roof.&#xA;This miracle not only shows His power over the body but His authority to forgive sin.&lt;/p&gt;</description>
     </item>
   </channel>
