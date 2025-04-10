@@ -2,36 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:53556/events/</loc>
+    <loc>http://localhost:54530/events/</loc>
     <lastmod>2025-03-26T21:49:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53556/events/trying-one-more/</loc>
+    <loc>http://localhost:54530/events/trying-one-more/</loc>
     <lastmod>2025-03-26T21:49:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53556/</loc>
+    <loc>http://localhost:54530/</loc>
     <lastmod>2025-03-26T21:49:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53556/events/testing/</loc>
+    <loc>http://localhost:54530/events/testing/</loc>
     <lastmod>2025-03-26T21:45:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53556/sermons/</loc>
+    <loc>http://localhost:54530/sermons/first-sermon/</loc>
     <lastmod>2025-03-26T17:43:47-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:53556/sermons/2024-03-24-jesus-heals/</loc>
+    <loc>http://localhost:54530/sermons/</loc>
+    <lastmod>2025-03-26T17:43:47-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:54530/sermons/2024-03-24-jesus-heals/</loc>
     <lastmod>2024-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53556/about/</loc>
+    <loc>http://localhost:54530/about/</loc>
   </url><url>
-    <loc>http://localhost:53556/categories/</loc>
+    <loc>http://localhost:54530/categories/</loc>
   </url><url>
-    <loc>http://localhost:53556/contact/</loc>
+    <loc>http://localhost:54530/contact/</loc>
   </url><url>
-    <loc>http://localhost:53556/staff/jane-smith/</loc>
+    <loc>http://localhost:54530/staff/jane-smith/</loc>
   </url><url>
-    <loc>http://localhost:53556/staff/john-doe/</loc>
-  </url><url>
-    <loc>http://localhost:53556/staff/</loc>
-  </url><url>
-    <loc>http://localhost:53556/tags/</loc>
-  </url>
-</urlset>
+    <loc>http://localhost:54530/staff/john-doe/</loc>

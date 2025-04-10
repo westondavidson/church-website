@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.145.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=53556&amp;path=livereload" data-no-instant defer></script>
+	<meta name="generator" content="Hugo 0.145.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=54530&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
   <title>Welcome to Comunidad de Fe (Community of Faith)</title>
   <link rel="stylesheet" href="/css/main.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
   <header>
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+      <span class="hamburger"></span>
+    </button>
     <nav>
       <a href="/">Home</a>
       <a href="/about">About</a>
@@ -31,7 +35,8 @@
   
   <main>
     
-<div class="home-content">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="home-content" id="main-content">
 <div class="home-info-panels">
   <section class="panel">
     <h3>Mission Statement</h3>
@@ -66,6 +71,27 @@ Our mission is to glorify God by making disciples of Jesus.</p>
     <div class="swiper-container">
       <div class="swiper-wrapper">
         
+        <div class="swiper-slide">
+          <a href="/about">
+          <img src="/uploads/default-hero-image.jpg" alt="Church Worship">
+          <div class="slide-caption">Join us for worship every Sunday</div>
+          </a>
+        </div>
+        
+        <div class="swiper-slide">
+          <a href="/events">
+          <img src="/uploads/img_1713.jpeg" alt="Community Gathering">
+          <div class="slide-caption">Our church community coming together</div>
+          </a>
+        </div>
+        
+        <div class="swiper-slide">
+          <a href="/events">
+          <img src="/uploads/hero-bg.jpg" alt="Youth Ministry">
+          <div class="slide-caption">Our youth ministry meets every Wednesday</div>
+          </a>
+        </div>
+        
       </div>
       
       <div class="swiper-pagination"></div>
@@ -81,6 +107,7 @@ Our mission is to glorify God by making disciples of Jesus.</p>
     <p>&copy; 2025 Comunidad De Fe Davenport. All rights reserved.</p>
   </footer>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="/js/mobile-menu.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var swiper = new Swiper('.swiper-container', {
@@ -97,6 +124,26 @@ Our mission is to glorify God by making disciples of Jesus.</p>
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
+        
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10
+          },
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 20
+          },
+          1024: {
+            slidesPerView: 1,
+            spaceBetween: 30
+          }
+        },
+        
+        observer: true,
+        observeParents: true,
+        resizeObserver: true,
+        updateOnWindowResize: true
       });
     });
   </script>

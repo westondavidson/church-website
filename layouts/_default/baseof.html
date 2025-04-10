@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
   {{ partial "header.html" . }}
@@ -26,6 +27,7 @@
   </main>
   {{ partial "footer.html" . }}
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="/js/mobile-menu.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var swiper = new Swiper('.swiper-container', {
@@ -42,6 +44,26 @@
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
+        // Add responsive breakpoints
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10
+          },
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 20
+          },
+          1024: {
+            slidesPerView: 1,
+            spaceBetween: 30
+          }
+        },
+        // Ensure proper sizing
+        observer: true,
+        observeParents: true,
+        resizeObserver: true,
+        updateOnWindowResize: true
       });
     });
   </script>

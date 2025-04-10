@@ -1,0 +1,272 @@
+/* Responsive styles for church website */
+
+/* Mobile menu styles */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 1000;
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #333;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before {
+  transform: translateY(-8px);
+}
+
+.hamburger::after {
+  transform: translateY(8px);
+}
+
+.mobile-menu-toggle.active .hamburger {
+  background: transparent;
+}
+
+.mobile-menu-toggle.active .hamburger::before {
+  transform: rotate(45deg);
+}
+
+.mobile-menu-toggle.active .hamburger::after {
+  transform: rotate(-45deg);
+}
+
+/* Mobile-first approach */
+@media screen and (max-width: 768px) {
+  /* Header and Navigation */
+  header {
+    position: relative;
+    padding: 1rem;
+    height: 60px;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  /* Override any existing nav styles */
+  header nav {
+    display: none !important;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    float: none !important;
+    margin-top: 0 !important;
+  }
+  
+  header nav.active {
+    display: flex !important;
+  }
+  
+  header nav a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 0;
+    margin: 0 !important;
+    border-bottom: 1px solid #eee;
+  }
+  
+  header nav a:last-child {
+    border-bottom: none;
+  }
+  
+  /* Home content - Fix for mobile view */
+  .home-content {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+  }
+  
+  /* Info panels - Fix for mobile view */
+  .home-info-panels {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .home-info-panels .panel {
+    width: 100%;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .home-info-panels .panel h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .home-info-panels .panel p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Carousel - Fix for mobile view */
+  .home-carousel {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .swiper-container {
+    width: 100%;
+    height: auto;
+  }
+  
+  .swiper-slide {
+    height: auto;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+  }
+  
+  .slide-caption {
+    position: relative;
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  /* Info cards */
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Location time grid */
+  .location-time .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Typography adjustments */
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  /* CTA buttons */
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .cta-buttons .button {
+    width: 100%;
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+  
+  /* Swiper adjustments */
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none; /* Hide navigation buttons on mobile */
+  }
+  
+  .swiper-pagination {
+    bottom: 0;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .home-info-panels {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .info-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .location-time .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .home-carousel {
+    width: 100%;
+  }
+  
+  .swiper-slide {
+    height: 300px;
+  }
+}
+
+/* Utility classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Ensure all images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ensure tables are responsive */
+table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+/* Ensure forms are responsive */
+input,
+textarea,
+select {
+  width: 100%;
+  max-width: 100%;
+} 

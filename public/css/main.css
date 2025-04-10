@@ -4,6 +4,10 @@
   info cards, and a mobile-friendly layout.
 */
 
+/* Import responsive styles */
+@import url('responsive.css');
+@import url('page-layouts.css');
+
 /* RESET & BASE STYLES */
 * {
   margin: 0;
@@ -15,12 +19,28 @@
 
 html, body {
   font-family: "Segoe UI", Arial, sans-serif;
-  color: #000000;
+  color: #333333; /* Improved contrast from #000000 */
   line-height: 1.6;
   background-color: #f9f9f9;
   margin: 0;
   padding: 0;
   height: 100%;
+  font-size: 16px; /* Base font size for better accessibility */
+}
+
+/* Improved focus styles for keyboard navigation */
+:focus {
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
 }
 
 body {
@@ -41,10 +61,28 @@ img {
 a {
   color: #0066cc;
   text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
-a:hover {
+a:hover, a:focus {
   text-decoration: underline;
+  color: #004d99; /* Darker blue for better contrast on hover */
+}
+
+/* Skip to main content link for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #0066cc;
+  color: white;
+  padding: 8px;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 /* 
@@ -59,18 +97,18 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for better readability */
   z-index: 100; /* Ensure header appears above the hero image */
   padding: 1rem 2rem; /* Adjust as needed */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 
 /* Optional: A "logo" class or link on the left */
 header .logo {
   float: left;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #fff; /* white if hero is dark behind it; adjust as needed */
+  color: #333333; /* Darker color for better contrast */
   text-decoration: none;
 }
 
@@ -91,33 +129,22 @@ nav {
 /* Navigation links: Minimal styling with subtle hover */
 nav a {
   margin-left: 1.5rem;
-  color: #000000; /* black text to stand out on the hero image */
+  color: #333333; /* Darker color for better contrast */
   text-decoration: none;
   font-size: 1rem;
   padding: 0.5rem;
   transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
 }
 
 /* On hover, the link gets a subtle background highlight */
-nav a:hover {
-  background: rgba(255, 255, 255, 0.2); /* Light semi-transparent highlight */
-  border-radius: 4px;
-  color: #2f2e2e;
+nav a:hover, nav a:focus {
+  background: rgba(0, 102, 204, 0.1); /* Light blue highlight */
+  color: #0066cc;
+  text-decoration: none;
 }
 
-
-
-@media screen and (max-width: 768px) {
-  /* Stack the nav items on mobile */
-  nav {
-    float: none;
-    margin-top: 0.5rem;
-  }
-
-  nav a {
-    margin: 0 0.75rem 0.75rem 0;
-  }
-}
+/* Mobile navigation styles are now in responsive.css */
 
 /* 
   2. HERO SECTION 
@@ -126,40 +153,49 @@ nav a:hover {
   - For example:
 */
 
-
-
 /* 6. Hero background + top padding so text isn't hidden under header */
 .hero {
   margin-top: 0; 
   padding: 6rem 1rem 4rem; /* top padding accounts for the header's overlap */
   text-align: center;
   position: relative;
-  background: url('/uploads/default-hero-image.jpg') center/cover no-repeat;
-  /* Optionally add a gradient overlay for better text contrast:
   background: linear-gradient(
-    rgba(0, 0, 0, 0.4), 
-    rgba(0, 0, 0, 0.4)
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
   ), url('/uploads/default-hero-image.jpg') center/cover no-repeat;
-  color: #fff;
-  */
+  color: #ffffff; /* White text for better contrast on dark background */
+  min-height: 60vh; /* Ensure hero has enough height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .hero h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #000000; /* If the hero is dark behind it, or #333 if it's light */
+  color: #ffffff; /* White text for better contrast */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+  max-width: 800px; /* Limit width for better readability */
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #000000; /* adjust to match your background */
+  color: #ffffff; /* White text for better contrast */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+  max-width: 700px; /* Limit width for better readability */
+  margin: 0 auto;
 }
 
 .hero .service-time {
-  font-size: 1rem;
-  color: #000000;
+  font-size: 1.1rem;
+  color: #ffffff; /* White text for better contrast */
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+  display: inline-block;
 }
 
 @media screen and (max-width: 768px) {
@@ -168,6 +204,10 @@ nav a:hover {
   }
   .hero p {
     font-size: 1.1rem;
+  }
+  .hero {
+    min-height: 50vh;
+    padding: 5rem 1rem 3rem;
   }
 }
 
@@ -188,34 +228,59 @@ nav a:hover {
 
 .card {
   background-color: #fff;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 1.5rem;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 .card h2 {
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-  color: #000000;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  color: #333333;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.card h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: #0066cc;
+  border-radius: 3px;
 }
 
 .card p {
-  margin-bottom: 1rem;
-  color: #000000;
+  margin-bottom: 1.5rem;
+  color: #555555;
+  line-height: 1.6;
 }
 
 .card a {
   display: inline-block;
   background-color: #0066cc;
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 4px;
   font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.card a:hover {
-  background-color: #004da8;
+.card a:hover, .card a:focus {
+  background-color: #004d99;
+  transform: translateY(-2px);
+  text-decoration: none;
 }
 
 @media screen and (max-width: 992px) {
@@ -272,9 +337,6 @@ nav a:hover {
     grid-template-columns: 1fr;
   }
 }
-
-
-
 
 /* 
   5. FOOTER 
@@ -391,7 +453,6 @@ footer p {
   }
 }
 
-
 /* Container to hold welcome and service times side by side */
 .home-info {
   display: flex;
@@ -436,7 +497,6 @@ footer p {
     flex-direction: column;
   }
 }
-
 
 /* Container for welcome, service times, and CTA buttons in one row */
 .home-info-row {
@@ -510,96 +570,4 @@ footer p {
   border-radius: 5px;
   text-decoration: none;
   margin: 0.5rem 0;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.home-info-row .cta-buttons a.button:hover {
-  background-color: #0056b3;
-  transform: translateY(-3px);
-}
-
-/* Responsive adjustments for mobile devices */
-@media (max-width: 768px) {
-  .home-info-row {
-    flex-direction: column;
-    margin: 0 1rem;
-  }
-}
-
-
-/* Container for the two-column layout */
-.home-content {
-  display: flex;
-  gap: 2rem;
-  margin: 2rem;
-  flex-wrap: wrap;  /* Allows columns to stack on smaller screens */
-}
-
-/* Left Column: Panels */
-.home-info-panels {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-}
-
-/* Style for each panel */
-.home-info-panels .panel {
-  background: linear-gradient(135deg, #ffffff, #f2f2f2);
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 2px solid #007BFF; /* Blue border */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Hover effect for panels */
-.home-info-panels .panel:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Right Column: Carousel Container */
-.home-carousel {
-  flex: 1;
-  /* Set a minimum height to help layout on larger screens */
-  min-height: 300px;
-  /* Optional: center the carousel content */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Basic styling for the carousel images */
-/* (Replace/extend this with your carousel library's CSS if needed) */
-.home-carousel .carousel {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
-
-.home-carousel .carousel img {
-  width: 100%;
-  max-width: 300px;  /* Adjust as needed */
-  border-radius: 8px;
-  scroll-snap-align: center;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .home-content {
-    flex-direction: column;
-    margin: 1rem;
-  }
-  
-  .home-info-panels {
-    grid-template-columns: 1fr;  /* Stack panels vertically */
-  }
-  
-  .home-carousel .carousel img {
-    max-width: 100%;
-  }
-}
+  transition: background-color 0.3s ease, transform 0.3

@@ -1,5 +1,6 @@
 {{ define "main" }}
-<div class="home-content">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="home-content" id="main-content">
 <div class="home-info-panels">
   <section class="panel">
     <h3>Mission Statement</h3>
@@ -28,11 +29,14 @@
       <div class="swiper-wrapper">
         {{ range .Params.carousel_images }}
         <div class="swiper-slide">
-          <img src="{{ . }}" alt="Church Activity">
+          {{ if .link }}<a href="{{ .link }}">{{ end }}
+          <img src="{{ .image }}" alt="{{ if .title }}{{ .title }}{{ else }}Church Activity{{ end }}">
+          {{ if .description }}<div class="slide-caption">{{ .description }}</div>{{ end }}
+          {{ if .link }}</a>{{ end }}
         </div>
         {{ end }}
       </div>
-      <!-- Optional: Pagination and Navigation Controls -->
+      <!-- Pagination and Navigation Controls -->
       <div class="swiper-pagination"></div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>

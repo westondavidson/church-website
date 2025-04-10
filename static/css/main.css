@@ -4,6 +4,10 @@
   info cards, and a mobile-friendly layout.
 */
 
+/* Import responsive styles */
+@import url('responsive.css');
+@import url('page-layouts.css');
+
 /* RESET & BASE STYLES */
 * {
   margin: 0;
@@ -15,12 +19,28 @@
 
 html, body {
   font-family: "Segoe UI", Arial, sans-serif;
-  color: #000000;
+  color: #333333; /* Improved contrast from #000000 */
   line-height: 1.6;
   background-color: #f9f9f9;
   margin: 0;
   padding: 0;
   height: 100%;
+  font-size: 16px; /* Base font size for better accessibility */
+}
+
+/* Improved focus styles for keyboard navigation */
+:focus {
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
 }
 
 body {
@@ -41,10 +61,28 @@ img {
 a {
   color: #0066cc;
   text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
-a:hover {
+a:hover, a:focus {
   text-decoration: underline;
+  color: #004d99; /* Darker blue for better contrast on hover */
+}
+
+/* Skip to main content link for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #0066cc;
+  color: white;
+  padding: 8px;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 /* 
@@ -59,18 +97,18 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for better readability */
   z-index: 100; /* Ensure header appears above the hero image */
   padding: 1rem 2rem; /* Adjust as needed */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 
 /* Optional: A "logo" class or link on the left */
 header .logo {
   float: left;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #fff; /* white if hero is dark behind it; adjust as needed */
+  color: #333333; /* Darker color for better contrast */
   text-decoration: none;
 }
 
@@ -91,33 +129,22 @@ nav {
 /* Navigation links: Minimal styling with subtle hover */
 nav a {
   margin-left: 1.5rem;
-  color: #000000; /* black text to stand out on the hero image */
+  color: #333333; /* Darker color for better contrast */
   text-decoration: none;
   font-size: 1rem;
   padding: 0.5rem;
   transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
 }
 
 /* On hover, the link gets a subtle background highlight */
-nav a:hover {
-  background: rgba(255, 255, 255, 0.2); /* Light semi-transparent highlight */
-  border-radius: 4px;
-  color: #2f2e2e;
+nav a:hover, nav a:focus {
+  background: rgba(0, 102, 204, 0.1); /* Light blue highlight */
+  color: #0066cc;
+  text-decoration: none;
 }
 
-
-
-@media screen and (max-width: 768px) {
-  /* Stack the nav items on mobile */
-  nav {
-    float: none;
-    margin-top: 0.5rem;
-  }
-
-  nav a {
-    margin: 0 0.75rem 0.75rem 0;
-  }
-}
+/* Mobile navigation styles are now in responsive.css */
 
 /* 
   2. HERO SECTION 
@@ -126,40 +153,49 @@ nav a:hover {
   - For example:
 */
 
-
-
 /* 6. Hero background + top padding so text isn't hidden under header */
 .hero {
   margin-top: 0; 
   padding: 6rem 1rem 4rem; /* top padding accounts for the header's overlap */
   text-align: center;
   position: relative;
-  background: url('/uploads/default-hero-image.jpg') center/cover no-repeat;
-  /* Optionally add a gradient overlay for better text contrast:
   background: linear-gradient(
-    rgba(0, 0, 0, 0.4), 
-    rgba(0, 0, 0, 0.4)
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
   ), url('/uploads/default-hero-image.jpg') center/cover no-repeat;
-  color: #fff;
-  */
+  color: #ffffff; /* White text for better contrast on dark background */
+  min-height: 60vh; /* Ensure hero has enough height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .hero h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #000000; /* If the hero is dark behind it, or #333 if it's light */
+  color: #ffffff; /* White text for better contrast */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+  max-width: 800px; /* Limit width for better readability */
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #000000; /* adjust to match your background */
+  color: #ffffff; /* White text for better contrast */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+  max-width: 700px; /* Limit width for better readability */
+  margin: 0 auto;
 }
 
 .hero .service-time {
-  font-size: 1rem;
-  color: #000000;
+  font-size: 1.1rem;
+  color: #ffffff; /* White text for better contrast */
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+  display: inline-block;
 }
 
 @media screen and (max-width: 768px) {
@@ -168,6 +204,10 @@ nav a:hover {
   }
   .hero p {
     font-size: 1.1rem;
+  }
+  .hero {
+    min-height: 50vh;
+    padding: 5rem 1rem 3rem;
   }
 }
 
@@ -188,34 +228,59 @@ nav a:hover {
 
 .card {
   background-color: #fff;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 1.5rem;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 .card h2 {
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-  color: #000000;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  color: #333333;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.card h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: #0066cc;
+  border-radius: 3px;
 }
 
 .card p {
-  margin-bottom: 1rem;
-  color: #000000;
+  margin-bottom: 1.5rem;
+  color: #555555;
+  line-height: 1.6;
 }
 
 .card a {
   display: inline-block;
   background-color: #0066cc;
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 4px;
   font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.card a:hover {
-  background-color: #004da8;
+.card a:hover, .card a:focus {
+  background-color: #004d99;
+  transform: translateY(-2px);
+  text-decoration: none;
 }
 
 @media screen and (max-width: 992px) {
@@ -272,9 +337,6 @@ nav a:hover {
     grid-template-columns: 1fr;
   }
 }
-
-
-
 
 /* 
   5. FOOTER 
@@ -391,7 +453,6 @@ footer p {
   }
 }
 
-
 /* Container to hold welcome and service times side by side */
 .home-info {
   display: flex;
@@ -436,7 +497,6 @@ footer p {
     flex-direction: column;
   }
 }
-
 
 /* Container for welcome, service times, and CTA buttons in one row */
 .home-info-row {
@@ -526,13 +586,14 @@ footer p {
   }
 }
 
-
 /* Container for the two-column layout */
 .home-content {
   display: flex;
   gap: 2rem;
   margin: 2rem;
   flex-wrap: wrap;  /* Allows columns to stack on smaller screens */
+  max-width: 1400px;
+  margin: 2rem auto;
 }
 
 /* Left Column: Panels */
@@ -541,15 +602,16 @@ footer p {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  min-width: 300px; /* Ensure panels don't get too narrow */
 }
 
 /* Style for each panel */
 .home-info-panels .panel {
-  background: linear-gradient(135deg, #ffffff, #f2f2f2);
+  background: linear-gradient(135deg, #ffffff, #f8f8f8);
   padding: 1.5rem;
   border-radius: 12px;
-  border: 2px solid #007BFF; /* Blue border */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 102, 204, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -557,49 +619,262 @@ footer p {
 
 /* Hover effect for panels */
 .home-info-panels .panel:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.home-info-panels .panel h3 {
+  color: #0066cc;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.home-info-panels .panel h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #0066cc;
+  border-radius: 3px;
+}
+
+.home-info-panels .panel p {
+  color: #555555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
 /* Right Column: Carousel Container */
 .home-carousel {
   flex: 1;
-  /* Set a minimum height to help layout on larger screens */
+  min-width: 0;
+  margin-left: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  position: relative; /* Add this to contain absolute positioned elements */
+  min-width: 300px; /* Ensure carousel doesn't get too narrow */
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
   min-height: 300px;
-  /* Optional: center the carousel content */
+  position: relative; /* Add this to contain absolute positioned elements */
+}
+
+.swiper-slide {
+  position: relative;
+  text-align: center;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 16/9; /* Set a consistent aspect ratio */
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Change from cover to contain */
+  background-color: #f5f5f5; /* Light background for empty space */
+  padding: 1rem; /* Add some padding around the image */
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 40px; /* Move up to make room for pagination */
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  z-index: 2; /* Ensure caption is above pagination */
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+/* Fix navigation button positioning */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  position: absolute; /* Ensure absolute positioning */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
+  z-index: 10; /* Ensure buttons are above slides */
+  transition: all 0.3s ease;
+  opacity: 0.7;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Basic styling for the carousel images */
-/* (Replace/extend this with your carousel library's CSS if needed) */
-.home-carousel .carousel {
+.swiper-button-next {
+  right: 10px; /* Position from right edge */
+}
+
+.swiper-button-prev {
+  left: 10px; /* Position from left edge */
+}
+
+/* Style for custom SVG icons */
+.swiper-button-next svg,
+.swiper-button-prev svg {
+  width: 24px;
+  height: 24px;
+  stroke: #fff;
+  stroke-width: 2.5;
+}
+
+/* Remove default Swiper icons */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  display: none;
+}
+
+/* Hover effects for navigation buttons */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(0, 102, 204, 0.8);
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Active state for navigation buttons */
+.swiper-button-next:active,
+.swiper-button-prev:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Fix pagination positioning */
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  z-index: 1; /* Lower z-index than caption */
+  padding-bottom: 5px; /* Add some padding at the bottom */
+}
+
+.swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.7;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #0066cc;
+  width: 20px;
+  border-radius: 5px;
+}
+
+/* CTA buttons styling in panels */
+.home-info-panels .panel .cta-buttons {
   display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
-
-.home-carousel .carousel img {
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
   width: 100%;
-  max-width: 300px;  /* Adjust as needed */
-  border-radius: 8px;
-  scroll-snap-align: center;
 }
 
-/* Responsive Adjustments */
+.home-info-panels .panel .cta-buttons .button {
+  background: linear-gradient(135deg, #0066cc, #004d99);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.home-info-panels .panel .cta-buttons .button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.home-info-panels .panel .cta-buttons .button:hover,
+.home-info-panels .panel .cta-buttons .button:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.home-info-panels .panel .cta-buttons .button:hover::before,
+.home-info-panels .panel .cta-buttons .button:focus::before {
+  opacity: 1;
+}
+
+/* Responsive adjustments for CTA buttons */
+@media (max-width: 768px) {
+  .home-info-panels .panel .cta-buttons {
+    margin-top: 1rem;
+  }
+  
+  .home-info-panels .panel .cta-buttons .button {
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* Remove conflicting mobile styles */
 @media (max-width: 768px) {
   .home-content {
-    flex-direction: column;
     margin: 1rem;
   }
   
   .home-info-panels {
-    grid-template-columns: 1fr;  /* Stack panels vertically */
+    margin-right: 0;
+    margin-bottom: 2rem;
   }
   
-  .home-carousel .carousel img {
-    max-width: 100%;
+  .home-carousel {
+    margin-left: 0;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cta-buttons .button {
+    width: 100%;
+  }
+  
+  .slide-caption {
+    bottom: 35px;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  
+  .swiper-pagination {
+    bottom: 5px;
   }
 }

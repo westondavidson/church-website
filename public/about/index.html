@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=53556&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=54530&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
   <title>About Our Church</title>
   <link rel="stylesheet" href="/css/main.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
   <header>
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+      <span class="hamburger"></span>
+    </button>
     <nav>
       <a href="/">Home</a>
       <a href="/about">About</a>
@@ -30,60 +34,84 @@
   
   <main>
     
-<section class="about-intro">
-  <h1>About Our Church</h1>
-  <p>We exist to glorify God and make disciples of Jesus Christ.</p>
-</section>
-
-<section class="mission">
-  <h2>Our Mission</h2>
-  At Grace Church, our mission is to proclaim the Gospel,
+<div class="about-page">
+  <div class="about-content">
+    <section class="mission">
+      <div class="section-content">
+        <h2>Our Mission</h2>
+        <div class="mission-text">
+          At Grace Church, our mission is to proclaim the Gospel,
 disciple believers, and serve the community for the glory of God.
-</section>
+        </div>
+      </div>
+    </section>
 
-<section class="beliefs">
-  <h2>What We Believe</h2>
-  <p>We believe:</p>
+    <section class="beliefs">
+      <div class="section-content">
+        <h2>What We Believe</h2>
+        <div class="beliefs-text">
+          <p>We believe:</p>
 <ul>
 <li>The Bible is the inspired Word of God.</li>
 <li>Jesus Christ is the only way to salvation.</li>
 <li>The Church is the body of Christ.</li>
 </ul>
-</section>
+        </div>
+      </div>
+    </section>
 
-<section class="leadership">
-  <h2>Leadership Team</h2>
-  <div class="team-grid">
-    
-      <div class="leader">
-        <img src="/uploads/john.jpg" alt="John Doe">
-        <h3>John Doe</h3>
-        <p><em>Lead Pastor</em></p>
-        John has been faithfully shepherding the church since 2015.
+    <section class="leadership">
+      <div class="section-content">
+        <h2>Leadership Team</h2>
+        <div class="team-grid">
+          
+            <div class="leader">
+              <div class="leader-image">
+                <img src="/uploads/john.jpg" alt="John Doe">
+              </div>
+              <div class="leader-info">
+                <h3>John Doe</h3>
+                <p class="leader-role"><em>Lead Pastor</em></p>
+                <div class="leader-bio">
+                  John has been faithfully shepherding the church since 2015.
 He has a heart for expository preaching and discipleship.
+                </div>
+              </div>
+            </div>
+          
+            <div class="leader">
+              <div class="leader-image">
+                <img src="/uploads/jane.jpg" alt="Jane Smith">
+              </div>
+              <div class="leader-info">
+                <h3>Jane Smith</h3>
+                <p class="leader-role"><em>Worship Director</em></p>
+                <div class="leader-bio">
+                  Jane leads the worship team with a passion for lifting up the name of Jesus.
+                </div>
+              </div>
+            </div>
+          
+        </div>
       </div>
+    </section>
+
     
-      <div class="leader">
-        <img src="/uploads/jane.jpg" alt="Jane Smith">
-        <h3>Jane Smith</h3>
-        <p><em>Worship Director</em></p>
-        Jane leads the worship team with a passion for lifting up the name of Jesus.
+    <section class="cta">
+      <div class="section-content">
+        <a href="/pages/beliefs" class="button">Learn More About Our Beliefs</a>
       </div>
+    </section>
     
   </div>
-</section>
-
-
-<section class="cta">
-  <a href="/pages/beliefs" class="button">Learn More About Our Beliefs</a>
-</section>
-
+</div>
 
   </main>
   <footer>
     <p>&copy; 2025 Comunidad De Fe Davenport. All rights reserved.</p>
   </footer>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="/js/mobile-menu.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var swiper = new Swiper('.swiper-container', {
@@ -100,6 +128,26 @@ He has a heart for expository preaching and discipleship.
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
+        
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10
+          },
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 20
+          },
+          1024: {
+            slidesPerView: 1,
+            spaceBetween: 30
+          }
+        },
+        
+        observer: true,
+        observeParents: true,
+        resizeObserver: true,
+        updateOnWindowResize: true
       });
     });
   </script>
