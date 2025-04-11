@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=60823&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -25,7 +25,7 @@
   <meta property="og:title" content="Events | Church Website">
   <meta property="og:description" content="Upcoming events at our church.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://localhost:60823/events/">
+  <meta property="og:url" content="http://localhost:1313/events/">
   
   
   <link rel="dns-prefetch" href="https://unpkg.com">
@@ -33,6 +33,9 @@
   
   <link rel="preload" href="/css/main.css" as="style">
   <link rel="preload" href="/js/mobile-menu.js" as="script">
+  
+  
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="section-events">
   
@@ -84,24 +87,52 @@
   <main id="main-content">
     <div class="container">
       
-  <h1>Events</h1>
+<section class="events-list">
+  <div class="section-header">
+    <h1>Events</h1>
+    <p>Join us for our upcoming events and gatherings</p>
+  </div>
+
   
-    <article class="event">
-      <h2><a href="/events/trying-one-more/">trying one more</a></h2>
+    <div class="events-grid">
       
-        <p><strong>Date:</strong> Mar 26, 2025</p>
+        <div class="event-card">
+          
+            <div class="event-image">
+              <img src="/uploads/default-hero-image.jpg" alt="Testing" loading="lazy">
+            </div>
+          
+          
+          <div class="event-content">
+            <span class="event-date">Mar 26, 2025</span>
+            <h2>Testing</h2>
+            <p class="event-time">5pM</p>
+            <p class="event-location">backyard</p>
+            <p class="event-summary"><p>bery cool</p></p>
+            <a href="/events/testing/" class="btn btn-primary">Event Details</a>
+          </div>
+        </div>
       
-      <p><p>nice</p></p>
-    </article>
+        <div class="event-card">
+          
+            <div class="event-image event-fallback-image">
+              <img src="/uploads/default-hero-image.jpg" alt="trying one more" loading="lazy">
+            </div>
+          
+          
+          <div class="event-content">
+            <span class="event-date">Mar 26, 2025</span>
+            <h2>trying one more</h2>
+            <p class="event-time">8PM</p>
+            <p class="event-location">apartment</p>
+            <p class="event-summary"><p>nice</p></p>
+            <a href="/events/trying-one-more/" class="btn btn-primary">Event Details</a>
+          </div>
+        </div>
+      
+    </div>
   
-    <article class="event">
-      <h2><a href="/events/testing/">Testing</a></h2>
-      
-        <p><strong>Date:</strong> Mar 26, 2025</p>
-      
-      <p><p>bery cool</p></p>
-    </article>
-  
+</section>
 
     </div>
   </main>
@@ -197,6 +228,30 @@
         });
       }
     });
+  </script>
+  
+  
+  <script>
+    if (window.netlifyIdentity) {
+      
+      const hash = window.location.hash;
+      const token = hash.match(/#invite_token=([^&]+)/) || hash.match(/#recovery_token=([^&]+)/);
+      
+      if (token && token.length > 1 && token[1]) {
+        
+        window.localStorage.setItem('netlifySiteURL', window.location.href.split('#')[0]);
+        window.location.replace('/admin/#' + hash.slice(1));
+      }
+      
+      
+      window.netlifyIdentity.on('init', user => {
+        if (!user) {
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
   </script>
 </body>
 </html>

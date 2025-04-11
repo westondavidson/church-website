@@ -4,32 +4,3 @@
 
 [context.production.environment]
   HUGO_VERSION = "0.121.2"
-
-# Redirect to Admin
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  query = {invite_token = ":invite_token"}
-  force = true
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  query = {recovery_token = ":recovery_token"}
-  force = true
-  
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  query = {confirmation_token = ":confirmation_token"}
-  force = true
-  
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  query = {access_token = ":access_token"}
-  force = true

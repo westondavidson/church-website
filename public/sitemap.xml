@@ -2,39 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:60823/events/</loc>
+    <loc>http://localhost:1313/events/</loc>
     <lastmod>2025-03-26T21:49:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:60823/events/trying-one-more/</loc>
+    <loc>http://localhost:1313/events/trying-one-more/</loc>
     <lastmod>2025-03-26T21:49:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:60823/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-03-26T21:49:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:60823/events/testing/</loc>
+    <loc>http://localhost:1313/events/testing/</loc>
     <lastmod>2025-03-26T21:45:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:60823/sermons/2024-03-24-jesus-heals/</loc>
+    <loc>http://localhost:1313/sermons/2024-03-24-jesus-heals/</loc>
     <lastmod>2024-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:60823/sermons/</loc>
+    <loc>http://localhost:1313/sermons/</loc>
     <lastmod>2024-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:60823/sermons/first-sermon/</loc>
+    <loc>http://localhost:1313/sermons/first-sermon/</loc>
     <lastmod>2023-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:60823/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
-    <loc>http://localhost:60823/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>http://localhost:60823/contact/</loc>
+    <loc>http://localhost:1313/contact/</loc>
   </url><url>
-    <loc>http://localhost:60823/staff/jane-smith/</loc>
+    <loc>http://localhost:1313/staff/jane-smith/</loc>
   </url><url>
-    <loc>http://localhost:60823/staff/john-doe/</loc>
-  </url><url>
-    <loc>http://localhost:60823/staff/</loc>
-  </url><url>
-    <loc>http://localhost:60823/tags/</loc>
-  </url>
-</urlset>
+    <loc>http://localhost:1313/staff/john-doe/</loc>
+  </url><url

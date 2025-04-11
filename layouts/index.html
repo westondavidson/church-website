@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="welcome-image">
-      <img src="/images/welcome.jpg" alt="Welcome to our church" loading="lazy">
+      <img src="{{ .Params.welcome_image | default "/images/welcome.jpg" }}" alt="Welcome to our church" loading="lazy">
     </div>
   </div>
 </section>
