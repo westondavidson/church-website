@@ -23,6 +23,13 @@ collections:
           - { label: "Contact Email", name: "contact_email", widget: "string", required: false }
           - { label: "Contact Phone", name: "contact_phone", widget: "string", required: false }
           - { label: "Address", name: "address", widget: "text", required: false }
+          - label: "Social Media Links"
+            name: "social_links"
+            widget: "object"
+            fields:
+              - { label: "Facebook URL", name: "facebook", widget: "string", required: false, hint: "Full URL to your Facebook page" }
+              - { label: "Instagram URL", name: "instagram", widget: "string", required: false, hint: "Full URL to your Instagram profile" }
+              - { label: "YouTube URL", name: "youtube", widget: "string", required: false, hint: "Full URL to your YouTube channel" }
 
   - name: "homepage"
     label: "Homepage"
