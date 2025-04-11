@@ -82,7 +82,6 @@ collections:
               - { label: "Bio", name: "bio", widget: "markdown" }
               - { label: "Photo", name: "photo", widget: "image", required: false }
 
-
   - name: "sermons"
     label: "Sermons"
     folder: "content/sermons"
@@ -121,8 +120,24 @@ collections:
       - { label: "Bio", name: "body", widget: "markdown" }
       - { label: "Photo", name: "photo", widget: "image", required: false }
 
-
   - name: "contact"
     label: "Contact Page"
     files:
-      -
+      - file: "content/contact.md"
+        label: "Contact page content"
+        name: "contact"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Address", name: "address", widget: "markdown" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Custom Pages"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" } 
