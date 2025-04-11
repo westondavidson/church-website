@@ -24,7 +24,5 @@ leadership:
     bio: |
       Jane leads the worship team with a passion for lifting up the name of Jesus.
     photo: "/uploads/jane.jpg"
-cta_text: "Learn More About Our Beliefs"
-cta_link: "/pages/beliefs"
 
 ---

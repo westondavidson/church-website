@@ -73,8 +73,7 @@ collections:
               - { label: "Role", name: "role", widget: "string" }
               - { label: "Bio", name: "bio", widget: "markdown" }
               - { label: "Photo", name: "photo", widget: "image", required: false }
-          - { label: "Call to Action Text", name: "cta_text", widget: "string", required: false }
-          - { label: "Call to Action Link", name: "cta_link", widget: "string", required: false }
+
 
   - name: "sermons"
     label: "Sermons"
