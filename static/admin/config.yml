@@ -23,6 +23,7 @@ collections:
           - { label: "Contact Email", name: "contact_email", widget: "string", required: false }
           - { label: "Contact Phone", name: "contact_phone", widget: "string", required: false }
           - { label: "Address", name: "address", widget: "text", required: false }
+          - { label: "Google Maps URL", name: "maps_url", widget: "string", required: false, hint: "Full URL to your Google Maps location" }
           - label: "Social Media Links"
             name: "social_links"
             widget: "object"
@@ -124,21 +125,4 @@ collections:
   - name: "contact"
     label: "Contact Page"
     files:
-      - file: "content/contact.md"
-        label: "Contact page content"
-        name: "contact"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Phone", name: "phone", widget: "string" }
-          - { label: "Address", name: "address", widget: "markdown" }
-          - { label: "Body", name: "body", widget: "markdown" }
-
-  - name: "pages"
-    label: "Custom Pages"
-    folder: "content/pages"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      -
